@@ -4,7 +4,8 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11,GPIO.OUT)
 servo = GPIO.PWM(11,50)
 try:
-    while True:
+    start_time = time.time()  
+    while time.time() - start_time < 60:
         servo.start(2)
         time.sleep(1)
         servo.ChangeDutyCycle(4)
